@@ -1,11 +1,7 @@
-/**
- *  合并所有的action-creator
- * */ 
+import vote from './vote';
 
- import vote from './vote';
- 
- let action = {
-    vote
- };
+let action = {
+  vote
+};
 
- export default action;
+export default action;
