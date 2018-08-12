@@ -11,19 +11,20 @@ import Custom from './routes/Custom';
 import Plan from './routes/Plan';
 
 import './static/css/bootstrap.css';
+import './static/css/common.css';
 
 ReactDOM.render(<Provider store={store}>
-  <div>
-    {/* 头部 */}
-    <Nav></Nav>
-    {/* 根据hashrouter展示不同页面 */}
-    <HashRouter>
+  <HashRouter>
+    <div>
+      {/* 头部 */}
+      <Nav></Nav>
+      {/* 根据hashrouter展示不同页面 */}
       <Switch>
         <Route path='/' exact component={Home}></Route>
         <Route path='/custom' component={Custom}></Route>
         <Route path='/plan' component={Plan}></Route>
         <Redirect to='/?lx=unsafe'></Redirect>
       </Switch>
-    </HashRouter>
-  </div>
+    </div>
+  </HashRouter>
 </Provider>, window.root);

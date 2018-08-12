@@ -6,7 +6,9 @@ class Plan extends React.Component {
     super(props, context);
   }
   render() {
-    return <div></div>
+    return <div>
+      我是计划管理页面
+    </div>
   }
 }
 

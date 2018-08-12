@@ -6,7 +6,9 @@ class Home extends React.Component {
     super(props, context);
   }
   render() {
-    return <div></div>
+    return <div>
+      我是首页
+    </div>
   }
 }
 
