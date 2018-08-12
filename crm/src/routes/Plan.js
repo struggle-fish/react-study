@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class Nav extends React.Component {
+class Plan extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -10,4 +10,4 @@ class Nav extends React.Component {
   }
 }
 
-export default connect()(Nav);
+export default connect()(Plan);
