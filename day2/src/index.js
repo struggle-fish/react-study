@@ -29,10 +29,11 @@ ReactDOM.render(<Provider store={store}>
         <NavTop></NavTop>
         <div className='container'>
           <Switch>
-            <Route path='/' exact component={Home}></Route>
-            <Route path='/course' exact component={Home}></Route>
+            {/* <Route path='/' exact component={Home}></Route> */}
+            <Route path='/course' component={Home}></Route>
             <Route path='/mycourse' component={Mycourse}></Route>
             <Route path='/person' component={Person}></Route>
+            <Redirect from='/' to='/course'></Redirect>
             <Redirect to='/?from=404'></Redirect>
           </Switch>
         </div>

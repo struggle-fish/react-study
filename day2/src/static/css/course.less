@@ -1,0 +1,90 @@
+.courseBox {
+  // 轮播图列表
+  .listBox {
+    .slick-slide {
+      height: 3rem;
+      overflow: hidden;
+      img {
+        display: block;
+        width: 100%;
+        height: 3rem;
+      }
+    }
+    .slick-active button {
+      background: red !important;
+    }
+  }
+  // 课程列表
+  .courseList {
+    padding: .2rem;
+    margin-bottom: 1rem;
+    h2 {
+      line-height: .7rem;
+      i {
+        margin-right: .1rem;
+        font-size: .4rem;
+      }
+    }
+    ul {
+      li {
+        box-sizing: border-box;
+        border: .02rem solid #ddd;
+        margin-bottom: .2rem;
+        padding: .1rem;
+        a {
+          display: block;
+          color: #000;
+        }
+        h3 {
+          line-height: .6rem;
+          font-size: .34rem;
+        }
+        .content {
+          display: flex;
+          .pic {
+            width: 2rem;
+            height: 1.4rem;
+            margin-right: .2rem;
+            background: #eee;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .desc {
+            flex: 1;
+            font-size: .32rem;
+            padding-left: .2rem;
+            p {
+              color: #666
+            }
+            p:first-child {
+              height: .8rem;
+              line-height: 1.4;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 课程详情
+  .baseInfo{
+    padding: .2rem;
+    video {
+      display: block;
+      width: 100%;
+      background: #000;
+    }
+    h3 {
+      line-height: .6rem;
+    }
+    p {
+      line-height: .6rem;
+    }
+    button {
+      display: block;
+      margin-top: .2rem;
+    }
+  }
+}

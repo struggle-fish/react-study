@@ -9,6 +9,22 @@
     <title>React App</title>
   </head>
   <body>
+    <script>
+      ;(function() {
+        function computed() {
+          var HTMLObj = document.documentElement;
+          var winW = HTMLObj.clientWidth;
+          let desW = 750;
+          if (winW >= desW) {
+            HTMLObj.style.fontSize = '100px';
+            return;
+          }
+          HTMLObj.style.fontSize = winW / 750 * 100 + 'px';
+        }
+        computed();
+        window.addEventListener('resize', computed, false);
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>
