@@ -1,15 +1,17 @@
-### 仿饿了么学习react
+## 仿饿了么学习react
 
-#### 关于适配传送门
+### 关于适配传送门
 
-[分享手淘过年项目中采用到的前端技术](https://www.w3cplus.com/css/taobao-2018-year.html "分享手淘过年项目中采用到的前端技术")
-[如何在Vue项目中使用vw实现移动端适配](https://www.w3cplus.com/css/taobao-2018-year.html "如何在Vue项目中使用vw实现移动端适配")
+- [分享手淘过年项目中采用到的前端技术](https://www.w3cplus.com/css/taobao-2018-year.html "分享手淘过年项目中采用到的前端技术")
+
+- [如何在Vue项目中使用vw实现移动端适配](https://www.w3cplus.com/css/taobao-2018-year.html "如何在Vue项目中使用vw实现移动端适配")
 
 
 ### 定位 - [高德](https://lbs.amap.com/api/javascript-api/reference/location "高德")
 
 
-### @ 修饰器配置 【没有解决】
+### @ 修饰器配置
+
 - package.json中配置
 
 ```
@@ -54,8 +56,7 @@ https://zhuanlan.zhihu.com/p/29151704
 
 ### react
 
-#### react异步组件
-
+### react异步组件
 
 ### 路由
 
