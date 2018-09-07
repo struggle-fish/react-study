@@ -8,15 +8,50 @@
 ### 定位 - 高德
 https://lbs.amap.com/api/javascript-api/reference/location
 
-### @ 装饰器配置 【没有解决】
+### @ 修饰器配置 【没有解决】
+- package.json中配置
+
+```
+// 安装 npm install babel-plugin-transform-decorators-legacy -D
+"babel": {
+  "presets": [
+    "react-app"
+  ],
+  "plugins": [
+    "transform-decorators-legacy"
+  ]
+},
+```
+
+- 配置资料参考
+
+```
 https://blockmood.github.io/2018/02/02/create-react-app%E4%B8%ADES7%E8%A3%85%E9%A5%B0%E5%99%A8%E9%85%8D%E7%BD%AE/
 https://juejin.im/post/59faf3975188254eaf27ea71
 https://juejin.im/post/5abb776bf265da23793c37ae
 https://www.jianshu.com/p/d07ccef9f4f0
 https://zhuanlan.zhihu.com/p/29151704
 
-1、配置babelrc不生效
-2、装饰器配置不成功
+```
+- 修饰器语法
+[修饰器语法](http://es6.ruanyifeng.com/#docs/decorator "修饰器语法")
+
+### 跨域处理
+- package.json配置
+
+```
+"proxy": {
+  "/api": {
+    "target": "http://localhost:3333",
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+},
+
+```
+- 
 
 ### react
 

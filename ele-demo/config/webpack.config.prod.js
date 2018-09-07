@@ -149,8 +149,8 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              babelrc: true,
-              presets: [require.resolve('babel-preset-react-app')],
+              // babelrc: true,
+              // presets: [require.resolve('babel-preset-react-app')],
               compact: true,
             },
           },

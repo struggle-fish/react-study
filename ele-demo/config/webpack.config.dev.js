@@ -145,11 +145,11 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              babelrc: true,
+              // babelrc: true,
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
-              presets: [require.resolve('babel-preset-react-app')],
+              // presets: [require.resolve('babel-preset-react-app')],
               cacheDirectory: true,
             }
           },
