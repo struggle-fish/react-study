@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './static/css/test.less';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import store from './store';
+import App from './pages';
 
 
-ReactDOM.render(<div>
-  <div className="test">就哈哈</div>
-</div>, window.root);
+
+ReactDOM.render(<Provider store={store}>
+  <BrowserRouter>
+    <App></App>
+  </BrowserRouter>
+</Provider>, window.root);
