@@ -86,6 +86,7 @@ module.exports = {
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
       'static': path.resolve(__dirname, '../src/static'),
+      'components': path.resolve(__dirname, '../src/component'),
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -132,8 +133,18 @@ module.exports = {
           // smaller than specified limit in bytes as data URLs to avoid requests.
           // A missing `test` is equivalent to a match.
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            test: [/\.svg$/],
+            loader: require.resolve('svg-sprite-loader'),
+            include: path.resolve(__dirname, '../src/static/svg'),
+            options: {
+              name: '[name]',
+              prefixize: true
+            },
+          },
+          {
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
             loader: require.resolve('url-loader'),
+            // include: path.resolve(__dirname, '../src/static/svg'),
             options: {
               limit: 10000,
               name: 'static/media/[name].[hash:8].[ext]',
@@ -166,6 +177,8 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  module: true,
+                  localIdentName: '[local]__[hash:8]'
                 },
               },
               {
@@ -186,7 +199,7 @@ module.exports = {
             // its runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/, /\.svg$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',

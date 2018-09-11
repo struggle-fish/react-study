@@ -54,6 +54,24 @@ https://zhuanlan.zhihu.com/p/29151704
 
 ```
 
+### 引入svg
+
+require.context("./file", false, /.file.js$/);
+这行代码就会去 file 文件夹（不包含子目录）下面的找所有文件名以 .file.js 结尾的文件能被 require 的文件。就是说可以通过正则匹配引入相应的文件模块。
+
+- require.context有三个参数：
+  - directory：说明需要检索的目录
+  - useSubdirectories：是否检索子目录
+  - regExp: 匹配文件的正则表达式
+
+```
+const requireAll = requireContext => requireContext.keys().map(requireContext);
+const reqSvg = require.context('./static/svg', true, /\.svg$/);
+requireAll(reqSvg);
+
+```
+
+
 ### react
 
 ### react异步组件

@@ -5,5 +5,5 @@ import reduxThunk from 'redux-thunk';
 import reduxPromise from 'redux-promise';
 
 
-let store = createStore(reducer, applyMiddleware(reduxLogger, reduxThunk, reduxPromise));
+let store = createStore(reducer, applyMiddleware(reduxThunk, reduxPromise, reduxLogger));
 export default store;
