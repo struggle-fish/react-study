@@ -69,6 +69,16 @@
       font-weight: @font-weight-small;
     }
   }
+  &.shrink {
+    .location {
+      height: 0;
+      opacity: 0;
+    }
+    .search {
+      margin-top: (@bar-height - @search-height) / 2;
+      border-radius: @bar-height;
+    }
+  }
 }
 
 

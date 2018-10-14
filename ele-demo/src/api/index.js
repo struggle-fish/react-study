@@ -33,3 +33,7 @@ export const getGeolocation = () => {
 export const getEntry = (params) => {
   return HttpUtils.get('/elm/entry', params);
 };
+// banner数据
+export const getBanner = (params) => {
+  return HttpUtils.get('/elm/banner', params);
+};

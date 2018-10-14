@@ -12,7 +12,7 @@ export default class TopBar extends React.PureComponent {
   render() {
     const { topBarShrink, history } = this.props;
     return (
-     <div className={ cls({ [styles.header] : true, [styles.shrink] : true }) }>
+     <div className={ cls({ [styles.header] : true, [styles.shrink] : false }) }>
       <div className={styles.location}>
         <SvgIcon className={styles.icon} name='#location'/>
         <span className={styles.address}>
