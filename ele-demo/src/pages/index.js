@@ -24,11 +24,10 @@ const OrderView = Loadable({
 });
 
 // 我的
-const ProfileView = Loadable({
-  loader: () => import('./Profile'),
+const MyView = Loadable({
+  loader: () => import('./My/My'),
   loading: Loading
 });
-
 
 // import Home from './Home';
 export default () => (
@@ -38,7 +37,7 @@ export default () => (
       <Route path='/home' component={HomeView}></Route>
       <Route path='/compass' component={CompassView}></Route>
       <Route path='/order' component={OrderView}></Route>
-      <Route path='/profile' component={ProfileView}></Route>
+      <Route path='/my' component={MyView}></Route>
       <Redirect to='/?from=404'></Redirect>
     </Switch>
   </React.Fragment>

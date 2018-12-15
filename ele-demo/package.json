@@ -107,7 +107,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://localhost:3333",
+      "target": "http://localhost:3009",
       "pathRewrite": {
         "^/api": ""
       },

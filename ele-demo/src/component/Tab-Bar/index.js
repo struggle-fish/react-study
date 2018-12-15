@@ -35,7 +35,7 @@ export default (Component) => {
               <SvgIcon className={cls(styles.icon)} name="#form" />
               <span className={styles.text}>订单</span>
             </a>
-            <a href="javascript:;" className={this.addActive('/profile')} onClick={() => this.handleClick('/profile')}>
+            <a href="javascript:;" className={this.addActive('/my')} onClick={() => this.handleClick('/my')}>
               <SvgIcon className={cls(styles.icon)} name="#people" />
               <span className={styles.text}>我的</span>
             </a>

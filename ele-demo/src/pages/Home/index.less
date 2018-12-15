@@ -7,4 +7,34 @@
   height: 100%;
   position: relative;
   z-index: 1;
+  .entry-wrapper {
+    .entry-slide {
+      background-color: @fill-body;
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 30px;
+    }
+    .item {
+      width: 20vw;
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .img {
+      width: 100px;
+      height: 100px;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    .name {
+      margin-top: 4px;
+      font-size: @font-size-small;
+      font-weight: @font-weight-small;
+      color: @color-base;
+    }
+  }
 }

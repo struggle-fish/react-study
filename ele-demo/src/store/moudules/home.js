@@ -1,5 +1,6 @@
 import * as types from '../action-types';
 import _ from 'lodash';
+import { groupArr } from '../../utils';
 import { getGeolocation, getEntry, getBanner } from '../../api';
 
 // 定义初始化数据，通过action更改state 然后返回一个新的state
@@ -28,10 +29,9 @@ export const homeInit = () => {
     // 过滤掉 address
     const location = { ..._.omit(locationInfo, ['address']) };
     const [ entry, banner ] = await Promise.all([ getEntry(location), getBanner(location) ]);
-
     // 派发数据 类似vue commit
     dispatch(homeUpdate({
-      entryData: entry.data,
+      entryData: groupArr(entry.data[0].entries, 10),
       bannerData: banner.data,
       init: true
     }));

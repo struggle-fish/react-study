@@ -6,6 +6,9 @@
 
 - [如何在Vue项目中使用vw实现移动端适配](https://www.w3cplus.com/css/taobao-2018-year.html "如何在Vue项目中使用vw实现移动端适配")
 
+- [移动端适配方案：基于flexible库的成熟方案和基于vw的新方案](https://mobilesite.github.io/2018/02/05/vm-mobile-layout/ "移动端适配方案：基于flexible库的成熟方案和基于vw的新方案")
+
+
 
 ### 定位 - [高德](https://lbs.amap.com/api/javascript-api/reference/location "高德")
 
