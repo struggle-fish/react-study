@@ -37,3 +37,15 @@ export const getEntry = (params) => {
 export const getBanner = (params) => {
   return HttpUtils.get('/elm/banner', params);
 };
+// 获取验证码
+export const mobileSendCode = (params) => {
+  return HttpUtils.post('/elm/mobile_send_code', params);
+}
+// 手机号登录
+export const loginByMobile = (params) => {
+  return HttpUtils.post('/elm/login_by_mobile', params);
+}
+// 获取用户信息
+export const getUserInfo = (params) => {
+  return HttpUtils.get('/elm/users', params);
+}

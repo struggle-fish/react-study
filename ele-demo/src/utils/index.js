@@ -32,3 +32,20 @@ export const getImageUrl = (hash) => {
     return `${baseUrl}/${hash.substring(0, 1)}/${hash.substring(1,3)}/${hash.substring(3)}.${suffix}`;
   }
 };
+
+/**
+ * 格式化手机号
+*/
+export const formatPhone = (phone) => {
+  return phone.substr(0, 3) + '****' + phone.substr(7, 11);
+}
+
+/** 
+ * 检验手机号
+*/
+export const checkMobile = (mobile) => {
+  if (/^[1][34578][0-9]{9}$/.test(mobile)) {
+    return true;
+  }
+  return false;
+}

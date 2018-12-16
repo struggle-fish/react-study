@@ -19,7 +19,6 @@ export default class Notification extends React.Component {
   getNoticeDOM = () => {
     const { notices } = this.state;
     return notices.map((notice) => {
-      console.log(notice, 'notice');
       return <Notice key={notice.key} {...notice}></Notice>
     })
   }

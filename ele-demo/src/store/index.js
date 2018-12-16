@@ -4,10 +4,11 @@ import reduxThunk from 'redux-thunk';
 import reduxPromise from 'redux-promise';
 
 
-import { home } from './moudules/home'
-
+import { home } from './moudules/home';
+import { globalState } from './moudules/global';
 let reducer = combineReducers({
-  home
+  home,
+  globalState
 });
 
 

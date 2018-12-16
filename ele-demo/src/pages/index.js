@@ -2,10 +2,38 @@
  * 页面路由
  */
 import React from 'react';
-import Loadable from 'react-loadable';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
-
+import Loadable from 'react-loadable';
 import Loading from '../component/Lazy-Loading';
+import { getUserInfo } from '../api';
+import { globalUpdate } from '../store/moudules/global';
+
+// 获取用户数据
+@connect(() => ({}), dispatch => bindActionCreators({
+  globalUpdate
+}, dispatch))
+class AuthComponent extends React.Component {
+  async componentDidMount () {
+   try {
+    const { data } = await getUserInfo();
+    this.props.globalUpdate({
+      isLogin: true,
+      userInfo: data
+    });
+   } catch(err) {
+    this.props.globalUpdate({
+      isLogin: false,
+      userInfo: {}
+    });
+   } 
+  }
+  render () {
+    return null
+  }
+}
+
 
 // 页面
 const HomeView = Loadable({
@@ -33,10 +61,16 @@ const LoginView = Loadable({
   loader: () => import('./Login/Login'),
   loading: Loading
 });
+// 退出登录
+const LogoutView = Loadable({
+  loader: () => import('./Logout/Logout'),
+  loading: Loading
+});
 
 // import Home from './Home';
 export default () => (
   <React.Fragment>
+    <AuthComponent />
     <Switch>
       <Route exact path='/' render={() => <Redirect to='/home'/>}></Route>
       <Route path='/home' component={HomeView}></Route>
@@ -44,6 +78,7 @@ export default () => (
       <Route path='/order' component={OrderView}></Route>
       <Route path='/my' component={MyView}></Route>
       <Route path='/login' component={LoginView}></Route>
+      <Route path='/logout' component={LogoutView}></Route>
       <Redirect to='/?from=404'></Redirect>
     </Switch>
   </React.Fragment>

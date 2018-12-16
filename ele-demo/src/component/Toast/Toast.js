@@ -19,7 +19,6 @@ const getMessageInstance = (props = {}, callBack) => {
 
 const notice = (content, duration, mask = true, onClose) => {
   getMessageInstance({}, (notification) => {
-    console.log(notification, 'notification__')
     messageInstance = notification;
     notification.notice({
       duration,
