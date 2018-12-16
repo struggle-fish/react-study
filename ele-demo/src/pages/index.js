@@ -28,6 +28,11 @@ const MyView = Loadable({
   loader: () => import('./My/My'),
   loading: Loading
 });
+// 登录
+const LoginView = Loadable({
+  loader: () => import('./Login/Login'),
+  loading: Loading
+});
 
 // import Home from './Home';
 export default () => (
@@ -38,6 +43,7 @@ export default () => (
       <Route path='/compass' component={CompassView}></Route>
       <Route path='/order' component={OrderView}></Route>
       <Route path='/my' component={MyView}></Route>
+      <Route path='/login' component={LoginView}></Route>
       <Redirect to='/?from=404'></Redirect>
     </Switch>
   </React.Fragment>

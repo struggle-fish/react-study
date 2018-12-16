@@ -1,5 +1,9 @@
 ## 仿饿了么学习react
 
+- [参考项目](https://github.com/gaojingran/react-eleme.git "参考项目")
+
+
+
 ### 关于适配传送门
 
 - [分享手淘过年项目中采用到的前端技术](https://www.w3cplus.com/css/taobao-2018-year.html "分享手淘过年项目中采用到的前端技术")
@@ -58,6 +62,9 @@ https://zhuanlan.zhihu.com/p/29151704
 ```
 
 ### 引入svg
+
+下载svg工具：谷歌应用搜索SVG Export
+
 
 require.context("./file", false, /.file.js$/);
 这行代码就会去 file 文件夹（不包含子目录）下面的找所有文件名以 .file.js 结尾的文件能被 require 的文件。就是说可以通过正则匹配引入相应的文件模块。
