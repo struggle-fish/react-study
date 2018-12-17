@@ -1,31 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Route, Switch, Redirect} from 'react-router-dom';
-import A from './component/Router-demo/A';
-import B from './component/Router-demo/B';
-import C from './component/Router-demo/C';
 
-ReactDOM.render(<HashRouter>
-  <Switch>
-    <Route path='/'  exact component={A}></Route>
-    <Route path='/user' component={B}></Route>
-    <Route path='/pay' render={() => {
-      // 一般在render中处理权限校验
-      let flag = localStorage.getItem('FLAG');
-      if (flag && flag === 'SAFE') {
-        return <C></C>;
+class RefsDemo extends React.Component {
+  constructor() {
+      super()
+      this.state = {
+          myComponent: null
       }
-      return '对不起~';
-    }}></Route>
-    {/* 上述都匹配完成后，以上都不符合情况 */}
-    {/* <Route render={() => {
-      return <div>404~</div>
-    }}></Route> */}
-    {/* 重定向 */}
-    {/* <Redirect to='/'></Redirect> */}
-    <Redirect to={{
-      pathname: '/',
-      search: '?lx=404'
-    }}></Redirect>
-  </Switch>
-</HashRouter>, window.root);
+      this.load = this.load.bind(this)
+  }
+
+  render() {
+      return <div>
+          {/* 点击执行 load 方法 */}
+          <button onClick={this.load}>点击加载异步组件</button>
+          {/* 变量存在时（非空，使用标签作为JSX的标签名（该变量已被赋值异步模块）；否则使用null（即无DOM） */}
+          {
+              this.state.myComponent ? <this.state.myComponent></this.state.myComponent> : null
+          }
+      </div>
+  }
+
+  load() {
+      // 这是一个异步行为，所以需要在回调函数里获取这个模块
+      require(['./learner.js'], Component => {
+          // 赋值给 state 变量
+          this.setState({
+              // 加载到的模块存储在 Comment.default 中（因为是通过 export default 导出的）
+              myComponent: Component.default
+          })
+      })
+  }
+}
+
+ReactDOM.render(<RefsDemo></RefsDemo>, window.root);
