@@ -51,7 +51,6 @@ export default class Login extends React.Component {
         'validate_token': validate_token
       });
       const { data } = await getUserInfo();
-      console.log(data, 'getUserInfo-ajax');
       Toast.hide();
       if (data) {
         this.props.globalUpdate({
@@ -119,7 +118,6 @@ export default class Login extends React.Component {
         }
       }, 1000);
     } catch({ err, name }) {
-      console.log(err, name, '验证码');
       if (name === 'NEED_CAPTCHA' || name === 'CAPTCHA_CODE_ERROR') {
         if (name === 'CAPTCHA_CODE_ERROR') {
           Toast.info(err);
@@ -132,7 +130,6 @@ export default class Login extends React.Component {
   }
   // 图形验证码
   getCaptchas = () => {
-    console.log('哈哈错了验证码');
     // try {
     //   const { data } = await mobileCaptchas
     // } catch({ err }) {

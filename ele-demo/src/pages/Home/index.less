@@ -7,7 +7,7 @@
   height: 100%;
   position: relative;
   z-index: 1;
-  .entry-wrapper {
+  .entry-swiper {
     .entry-slide {
       background-color: @fill-body;
       display: flex;
@@ -35,6 +35,60 @@
       font-size: @font-size-small;
       font-weight: @font-weight-small;
       color: @color-base;
+    }
+  }
+  .swiper-pagination-customs {
+    width: 36px;
+    height: 6px;
+    background: #000;
+    opacity: .2;
+    display: inline-block;
+    margin: 0 2px;
+    &.active {
+      background-color: #00a6ff;
+    }
+  }
+  .home-wrapper {
+    position: absolute;
+    top: 206px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  // 运营位
+  .activitys-cells {
+    padding: 0 15px;
+  }
+  .activity-cell {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-left: 24px;
+    margin-bottom: 15px;
+    color: @color-title;
+    background: linear-gradient(0deg,#f4f4f4 5%,#fafafa 95%);
+    .hd {
+      flex: 1;
+      h3 {
+        font-size: 34px;
+      }
+      p {
+        color: @color-txt;
+        font-size: 26px;
+      }
+      a {
+        color: #af8260;
+        font-size: 24px;
+      }
+    }
+    .bd {
+      width: 282px;
+      height: 184px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
   }
 }

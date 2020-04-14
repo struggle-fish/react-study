@@ -6,6 +6,8 @@ import reduxPromise from 'redux-promise';
 
 import { home } from './moudules/home';
 import { globalState } from './moudules/global';
+
+// 合并管理员
 let reducer = combineReducers({
   home,
   globalState

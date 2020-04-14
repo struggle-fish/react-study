@@ -3,7 +3,7 @@ import cls from 'classnames';
 import PropTypes from 'prop-types'
 import Swiper from 'swiper/dist/js/swiper.js';
 import styles from './index.less';
-
+import { getImageUrl } from '../../utils';
 export default class SwiperComponent extends React.Component {
   static defaultProps = {
     direction: 'horizontal', // 滑动方向，可设置水平(horizontal)或垂直(vertical)
@@ -29,6 +29,8 @@ export default class SwiperComponent extends React.Component {
   componentDidMount() {
     this.initSwiper();
   }
+  componentDidUpdate() {
+  }
   initSwiper = () => {
     let { direction, autoplay, loop, pagination } = this.props;
     new Swiper('#appSwiper', {
@@ -43,12 +45,12 @@ export default class SwiperComponent extends React.Component {
   render() {
     let { children } = this.props;
     return (
-      <div className={cls("swiper-container", styles['swiper-test'])} id='appSwiper'>
+      <div className={cls("swiper-container", styles['swiper-component'])} id='appSwiper'>
         <div className="swiper-wrapper">
           {children.map((value, index) => (
             <div className="swiper-slide" key={index}>
               <a href="javascript:;">
-                <img src={value.image_url} alt=""/>
+                <img src={getImageUrl(value.image_hash)} alt=""/>
               </a>
             </div>
           ))}

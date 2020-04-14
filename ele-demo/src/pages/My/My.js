@@ -103,9 +103,36 @@ export default class My extends React.Component {
         <div className={styles.list}>
           <div className={styles.item}>
             <div className={styles.icon}>
-              <SvgIcon name='#carrot'></SvgIcon>
+              <SvgIcon name='#address'></SvgIcon>
             </div>
             <p className={styles.desc}>我的地址</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+        </div>
+
+        <div className={styles.list}>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#point'></SvgIcon>
+            </div>
+            <p className={styles.desc}>金币商城</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#commend'></SvgIcon>
+            </div>
+            <p className={styles.desc}>分享拿10元现金</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+        </div>
+
+        <div className={styles.list}>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#service'></SvgIcon>
+            </div>
+            <p className={styles.desc}>我的客服</p>
             <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
           </div>
           <div className={styles.item}>
@@ -113,6 +140,59 @@ export default class My extends React.Component {
               <SvgIcon name='#elem-icon'></SvgIcon>
             </div>
             <p className={styles.desc}>下载饿了么APP</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#rule'></SvgIcon>
+            </div>
+            <p className={styles.desc}>规则中心</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+        </div>
+        <div className={styles.list}>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#service'></SvgIcon>
+            </div>
+            <p className={styles.desc}>我的客服</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#elem-icon'></SvgIcon>
+            </div>
+            <p className={styles.desc}>下载饿了么APP</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#rule'></SvgIcon>
+            </div>
+            <p className={styles.desc}>规则中心</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+        </div>
+        <div className={styles.list}>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#service'></SvgIcon>
+            </div>
+            <p className={styles.desc}>我的客服</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#elem-icon'></SvgIcon>
+            </div>
+            <p className={styles.desc}>下载饿了么APP</p>
+            <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+              <SvgIcon name='#rule'></SvgIcon>
+            </div>
+            <p className={styles.desc}>规则中心</p>
             <SvgIcon name='#right' className={styles['icon-right']}></SvgIcon>
           </div>
         </div>

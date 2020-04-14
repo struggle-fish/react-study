@@ -9,7 +9,6 @@ import App from './pages';
 const requireAll = requireContext => requireContext.keys().map(requireContext);
 const reqSvg = require.context('./static/svg', true, /\.svg$/);
 requireAll(reqSvg);
-
 ReactDOM.render(<Provider store={store}>
   <BrowserRouter>
     <App></App>

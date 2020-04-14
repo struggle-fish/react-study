@@ -49,3 +49,7 @@ export const loginByMobile = (params) => {
 export const getUserInfo = (params) => {
   return HttpUtils.get('/elm/users', params);
 }
+// 商家列表
+export const getShopList = (params) => {
+  return HttpUtils.get('/elm/restaurants', params);
+}

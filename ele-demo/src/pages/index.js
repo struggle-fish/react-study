@@ -16,30 +16,34 @@ import { globalUpdate } from '../store/moudules/global';
 }, dispatch))
 class AuthComponent extends React.Component {
   async componentDidMount () {
-   try {
-    const { data } = await getUserInfo();
-    this.props.globalUpdate({
-      isLogin: true,
-      userInfo: data
-    });
-   } catch(err) {
-    this.props.globalUpdate({
-      isLogin: false,
-      userInfo: {}
-    });
-   } 
+    try {
+      const { data } = await getUserInfo();
+      this.props.globalUpdate({
+        isLogin: true,
+        userInfo: data
+      });
+    } catch(err) {
+      this.props.globalUpdate({
+        isLogin: false,
+        userInfo: {}
+      });
+    } 
   }
   render () {
     return null
   }
 }
-
-
-// 页面
+// 首页
 const HomeView = Loadable({
   loader: () => import('./Home'),
   loading: Loading
 });
+// 搜索商家
+const SearchShopView = Loadable({
+  loader: () => import('./Search-shop/Search-shop'),
+  loading: Loading
+});
+
 // 发现
 const CompassView = Loadable({
   loader: () => import('./Compass'),
@@ -74,6 +78,7 @@ export default () => (
     <Switch>
       <Route exact path='/' render={() => <Redirect to='/home'/>}></Route>
       <Route path='/home' component={HomeView}></Route>
+      <Route path='/search-shop' component={SearchShopView}></Route>
       <Route path='/compass' component={CompassView}></Route>
       <Route path='/order' component={OrderView}></Route>
       <Route path='/my' component={MyView}></Route>

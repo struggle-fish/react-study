@@ -39,6 +39,7 @@ router.get('/entry', (req, res, next) => {
 		'GET',
 		`${baseUrl}/shopping/v2/entries?${queryString(req.query)}&templates[]=main_template&templates[]=favourable_template&templates[]=svip_template&terminal=h5`)
 	.then((resdata) => {
+		// console.log(resdata, 'resolve(args)');
 		res.json({
 			result: resdata.data,
 			code: 0
@@ -149,7 +150,7 @@ router.get('/users', (req, res, next) => {
 		`${baseUrl}/eus/v3/users/${USERID}`,
 		cookie
 	).then(({ data }) => {
-		console.log(data, '用户信息')
+		// console.log(data, '用户信息')
 		res.json({
 			result: data,
 			code: 0
@@ -162,6 +163,47 @@ router.get('/users', (req, res, next) => {
 	});
 });
 
+
+/**
+ * 获取用户信息
+ * https://h5.ele.me/restapi/shopping/v3/restaurants?latitude=39.97100069999999&longitude=116.3221563&offset=0&limit=8&extras[]=activities&extras[]=tags&extra_filters=home&rank_id=&terminal=h5
+ */
+
+router.get('/restaurants', (req, res) => {
+	const pickArray = ['latitude', 'longitude', 'limit', 'offset', 'terminal', 'rank_id', 'extra_filters', 'order_by', 'super_vip', 'keywords'];
+	const options = pick(req.query, ['delivery_mode', 'extras', 'restaurant_category_ids', 'activity_types', 'average_cost_ids', 'support_ids'])
+	const tailUrl =  Object.keys(options).map(v => formatArrayQuery(req.query[v], v)).join('&')
+	const cookie = req.get('Cookie') || '';
+	request(
+		'GET',
+		`${baseUrl}/shopping/v3/restaurants?${queryString(pick(req.query, pickArray))}]&${tailUrl}`,
+		cookie
+	).then(({ data }) => {
+		let result = [];
+		if (data.items.length) {
+			result = data.items.map(({ restaurant }) => ({
+				...restaurant,
+				image_url: formatImageUrl(restaurant.image_path),
+				recommend: {
+					...restaurant.recommend,
+					image_url: formatImageUrl(restaurant.recommend.image_hash)
+				}
+			}))
+		}
+		res.json({
+			result: {
+				...data,
+				items: result
+			},
+			code: 0
+		});
+	}).catch(({ errmsg }) => {
+		res.json({
+			errmsg,
+			code: 1
+		});
+	});
+});
 
 
 
